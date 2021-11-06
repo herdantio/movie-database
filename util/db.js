@@ -22,6 +22,7 @@ async function closeDB() {
         console.error('Unable to close connection to the database:', error);
     }
 }
+
 module.exports = {
     connectDB,
     closeDB
