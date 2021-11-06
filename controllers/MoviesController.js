@@ -1,8 +1,14 @@
+const db = require('../models/index')
 
+async function getAllMovies(req, res) {
+    try {
+        let movies = await db['Movie'].findAll()
 
-function getAllMovies(req, res) {
-
-    return res.status(200).json({data: 'OK'})
+        return res.status(200).json(movies)
+    }catch (e) {
+        console.error(e)
+        return res.status(500).json(e)
+    }
 }
 module.exports = {
     getAllMovies

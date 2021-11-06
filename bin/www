@@ -13,8 +13,9 @@ var http = require('http');
  */
 
 var port = normalizePort(process.env.PORT || '3000');
+const host = 'localhost'
 app.set('port', port);
-
+app.set('host', host)
 /**
  * Create HTTP server.
  */
@@ -25,13 +26,13 @@ var server = http.createServer(app);
 // import sequelize connect and close method
 //
 
-const {closeDB, connectDB} = require('../util/db')
+const {closeDB, connectDB} = require('../util/db-connection')
 
 /**
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port, () => {
+server.listen(port, host, () => {
   connectDB()
 });
 server.on('error', onError);

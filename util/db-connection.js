@@ -1,9 +1,4 @@
-const {Sequelize} = require('sequelize')
-
-const sequelize = new Sequelize('seryu-db', 'postgres', 'docker', {
-    host: 'localhost',
-    dialect: 'postgres'
-});
+const {sequelize} = require('../models/index')
 
 async function connectDB() {
     try {
