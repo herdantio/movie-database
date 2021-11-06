@@ -3,15 +3,18 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "cleanup": "kill -9 $(lsof -i tcp:3000 -t)",
-    "dev": "nodemon --delay 500ms ./bin/www"
+    "start": "npm run flush && node ./bin/www",
+    "flush": "lsof -i tcp:3000 -t && kill -9 $(lsof -i tcp:3000 -t) || echo \"NOT EXIST\"",
+    "dev": "npm run flush && nodemon ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.9.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.14"

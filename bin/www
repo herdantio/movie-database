@@ -21,13 +21,24 @@ app.set('port', port);
 
 var server = http.createServer(app);
 
+//
+// import sequelize connect and close method
+//
+
+const {closeDB, connectDB} = require('../util/db')
+
 /**
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+server.listen(port, () => {
+  connectDB()
+});
 server.on('error', onError);
 server.on('listening', onListening);
+server.on('close', () => {
+  closeDB()
+})
 
 /**
  * Normalize a port into a number, string, or false.
