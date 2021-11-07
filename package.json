@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
+    "migrate": "sequelize-cli db:migrate",
     "flush": "lsof -i tcp:3000 -t && kill -9 $(lsof -i tcp:3000 -t) || echo \"NOT EXIST\"",
     "dev": "nodemon ./bin/www"
   },
