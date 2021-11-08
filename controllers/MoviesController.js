@@ -61,15 +61,38 @@ async function deleteOneMovie(req, res) {
 async function updateMoviePicture(req, res) {
     try {
         let {movieId} = req.body
-        return res.stat(200)
+        let moviePicture = req.file.filename
+
+        let movie = db['Movie'].update({moviePicture}, {
+            where: {
+                id: movieId
+            }
+        })
+        return res.status(200).json(moviePicture)
     }catch (e) {
         return res.status(500).json({'err': e.message})
     }
 }
 
+async function updateMovieData(req, res) {
+    try {
+        let {movieId, movieTitle, movieYear, movieSynopsis} = req.body
+
+        let movie = db['Movie'].update({movieTitle, movieYear, movieSynopsis}, {
+            where: {
+                id: movieId
+            }
+        })
+        return res.status(200).json(movie)
+    }catch (e) {
+        return res.status(500).json({'err': e.message})
+    }
+}
 module.exports = {
     getAllMovies,
     getOneMovie,
     addMovie,
-    deleteOneMovie
+    deleteOneMovie,
+    updateMoviePicture,
+    updateMovieData
 }
