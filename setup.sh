@@ -1,3 +1,4 @@
+
 echo "build and run container"
 docker-compose up -d --build
 echo "finished building & running"
