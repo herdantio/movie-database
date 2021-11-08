@@ -34,11 +34,4 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-//DEFINE ASSOCIATIONS
-db['MOVIE'].hasMany(db['Review'], {as: 'Reviews'});
-db['Review'].belongsTo(db['MOVIE'], {
-  foreignKey: 'id',
-  as: 'Movie'
-});
-
 module.exports = db;

@@ -30,7 +30,7 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Reviews');
     await queryInterface.removeColumn('Reviews', 'deletedAt');
+    await queryInterface.dropTable('Reviews');
   }
 };
