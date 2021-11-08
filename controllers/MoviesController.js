@@ -17,7 +17,11 @@ async function getOneMovie(req, res) {
             {
                 where: {
                     id: movieId
-                }
+                },
+                include: [{
+                    model: db['Review'],
+                    attributes: ['id', 'reviewName', 'reviewDesc'],
+                }]
             }
         )
         return res.status(200).json(movie)

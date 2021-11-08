@@ -6,14 +6,14 @@ module.exports = {
       {
         reviewName: "ANON 1",
         reviewDesc: "GOOD WATCH",
-        movieId: 1,
+        MovieId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         reviewName: "ANON 2",
         reviewDesc: "MEH",
-        movieId: 1,
+        MovieId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       }
