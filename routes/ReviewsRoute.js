@@ -1,11 +1,12 @@
 const {Router} = require('express')
+const upload = require('../util/multer-storage')
 
 const {
-    getAllReviews
+    addReview
 } = require('../controllers/ReviewsController')
 
 const reviewRouter = Router()
 
-reviewRouter.get('/all', getAllReviews)
+reviewRouter.post('/add',upload.none(), addReview)
 
 module.exports = reviewRouter
