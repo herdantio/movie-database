@@ -7,7 +7,7 @@ module.exports = {
           {
             movieTitle: "Movie 1",
             movieYear: "2010",
-            moviePicture: "movie1.png",
+            moviePicture: "freezing-vibration.jpg",
             movieSynopsis: "just a synopsis",
             createdAt: new Date(),
             updatedAt: new Date()
@@ -15,7 +15,7 @@ module.exports = {
           {
             movieTitle: "Movie 2",
             movieYear: "2019",
-            moviePicture: "movie2.png",
+            moviePicture: "acchi-kocchi.jpg",
             movieSynopsis: "just a synopsis. Really, it's just a synopsis for movie 2",
             createdAt: new Date(),
             updatedAt: new Date()

@@ -29,35 +29,39 @@ async function getOneMovie(req, res) {
 
 async function addMovie(req, res) {
     try {
-        let {movieTitle, movieYear, moviePicture, movieSynopsis} = req.body
-
+        let {movieTitle, movieYear, movieSynopsis} = req.body
+        let moviePicture = req.file.filename
         let movie = await db['Movie'].create({
             movieTitle,
             movieYear,
             moviePicture,
             movieSynopsis
         })
-        return res.status(200).json({
-            movieTitle,
-            movieYear,
-            moviePicture,
-            movieSynopsis
-        })
+        return res.status(200).json(movie)
     }catch (e) {
-        return res.status(500)
+        return res.status(500).json({'err': e.message})
     }
 }
 
 async function deleteOneMovie(req, res) {
 
-    let {movieId} = req.body
     try {
+        let {movieId} = req.body
         let movie = await db['Movie'].destroy({
             where: {
                 id: movieId
             }
         })
         return res.status(200).json(movie)
+    }catch (e) {
+        return res.status(500).json({'err': e.message})
+    }
+}
+
+async function updateMoviePicture(req, res) {
+    try {
+        let {movieId} = req.body
+        return res.stat(200)
     }catch (e) {
         return res.status(500).json({'err': e.message})
     }
