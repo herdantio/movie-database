@@ -5,6 +5,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: () => import('@/atomic/pages/Home')
+  },
+  {
+    path: '/:id',
+    name: 'MoviePage',
+    component: () => import('@/atomic/pages/MoviePage')
   }
 ]
 

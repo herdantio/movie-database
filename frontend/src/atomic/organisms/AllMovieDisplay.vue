@@ -1,10 +1,11 @@
 <template>
-    <el-row class="p-40">
+    <el-row>
       <el-col v-for="movie in movies" :span="4">
         <movie-card
             :movieTitle="movie.movieTitle"
             :moviePicture="movie.moviePicture"
             :movieYear="movie.movieYear"
+            @click="goToMoviePage(movie.id)"
         >
         </movie-card>
       </el-col>
@@ -25,6 +26,11 @@ export default {
     ...mapState('movie', {
       movies: state => state.movies
     })
+  },
+  methods: {
+    goToMoviePage(id){
+      this.$router.push(`/${id}`)
+    }
   }
 }
 </script>

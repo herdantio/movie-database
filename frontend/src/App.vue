@@ -1,6 +1,6 @@
 <template>
   <menu-bar/>
-  <router-view/>
+  <router-view  class="p-40"/>
 </template>
 
 <script>

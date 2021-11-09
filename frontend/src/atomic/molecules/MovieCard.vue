@@ -1,5 +1,5 @@
 <template>
-  <el-row class="p-15">
+  <el-row class="p-15 pointer">
     <el-col>
       <el-row>
         <el-image
