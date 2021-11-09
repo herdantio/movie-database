@@ -4,7 +4,7 @@ services:
   server:
     container_name: server
     restart: always
-    build: .
+    build: ./backend
     depends_on:
       - postgres
     ports:
