@@ -4,7 +4,7 @@ COPY package.json .
 COPY package-lock.json .
 COPY config/config.json ./config/
 
-RUN echo "install all dependencies" && npm ci
+RUN echo "Install dependencies for backend app" && npm ci
 
 COPY .. .
 

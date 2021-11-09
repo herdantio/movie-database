@@ -1,13 +1,13 @@
-if [[ $1 == "all" ]]
+if [[ $1 == "backend" ]]
 then
+  printf 'Running Only Backend Docker Service \n'
+  echo "build and run container"
+  docker-compose up -d --build server postgres
+  echo "finished building & running"
+else
   printf 'Running All Docker Service \n'
   echo "build and run container"
   docker-compose up -d --build
-  echo "finished building & running"
-else
-    printf 'Running Only Backend Docker Service \n'
-  echo "build and run container"
-  docker-compose up -d --build server postgres
   echo "finished building & running"
 fi
 
