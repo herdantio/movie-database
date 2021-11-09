@@ -1,7 +1,12 @@
 <template>
-    <el-row>
-      <el-col v-for="movie in movies" :span="12">
-        <movie-card :movieTitle="movie.movieTitle"></movie-card>
+    <el-row class="p-40">
+      <el-col v-for="movie in movies" :span="4">
+        <movie-card
+            :movieTitle="movie.movieTitle"
+            :moviePicture="movie.moviePicture"
+            :movieYear="movie.movieYear"
+        >
+        </movie-card>
       </el-col>
     </el-row>
 </template>

@@ -1,12 +1,17 @@
 <template>
-  <el-row justify="space-between" class="menuBarBackgroundColor paddingMenu">
-    <el-col :span="3" class="marginMenuItem">
-      <h2>Movie</h2>
-    </el-col>
-    <el-col :span="4" class="marginMenuItem">
+  <el-menu
+      mode="horizontal"
+      background-color="#5D5FEF"
+      text-color="#000"
+      active-text-color="#000"
+  >
+    <el-menu-item>
+      <h1>Movie</h1>
+    </el-menu-item>
+    <el-menu-item>
       <el-button round>ADD MOVIE</el-button>
-    </el-col>
-  </el-row>
+    </el-menu-item>
+  </el-menu>
 </template>
 
 <script>
@@ -16,17 +21,4 @@ export default {
 </script>
 
 <style scoped>
-.menuBarBackgroundColor{
-  background-color: #5D5FEF;
-}
-.paddingMenu{
-  padding: 2px;
-}
-.marginMenuItem{
-  margin: 2px;
-}
-
-.badgeFont{
-  font-size: 20px;
-}
 </style>
