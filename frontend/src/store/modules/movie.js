@@ -2,12 +2,19 @@ import movieAPI from "@/api/movieAPI";
 
 export default {
     namespaced: true,
-    state: {},
-    mutations: {},
+    state: {
+        movies: []
+    },
+    mutations: {
+        getAllMovie(state, movies) {
+            state.movies = [...movies]
+            console.log(state.movies)
+        }
+    },
     actions: {
-        async getAllMovie(){
+        async getAllMovie({commit}){
             let res = await movieAPI.getAllMovie()
-            console.log(res.data)
+            commit('getAllMovie', res.data)
         }
     }
 }
