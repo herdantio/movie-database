@@ -4,7 +4,13 @@ export default {
     namespaced: true,
     state: {
         movies: [],
-        movie: {}
+        movie: {
+            moviePicture: '',
+            movieTitle: '',
+            movieYear: '',
+            movieSynopsis: '',
+            Reviews: []
+        }
     },
     mutations: {
         getAllMovie(state, movies) {

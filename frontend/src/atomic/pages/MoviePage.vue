@@ -1,6 +1,7 @@
 <template>
   <div>
     <movie-data/>
+    <movie-review/>
   </div>
 </template>
 
@@ -11,7 +12,8 @@ import {defineAsyncComponent} from "vue";
 export default {
   name: "MoviePage",
   components: {
-    MovieData: defineAsyncComponent(() => import('@/atomic/organisms/MovieData'))
+    MovieData: defineAsyncComponent(() => import('@/atomic/organisms/MovieData')),
+    MovieReview: defineAsyncComponent(() => import('@/atomic/organisms/MovieReview'))
   },
   methods: {
     ...mapActions('movie', [
