@@ -1,5 +1,5 @@
 <template>
-  <el-row class="c-w bg-purple m-10">
+  <el-row class="c-w bg-purple m-10 p-15">
     <el-col>
       <h2>{{reviewName}}</h2>
       <h3>{{reviewDesc}}</h3>
