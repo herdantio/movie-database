@@ -1,7 +1,11 @@
 <template>
-  <div>
-    <movie-data class="mb-24"/>
-    <movie-review />
+  <div class="flex flex-col">
+    <div>
+      <movie-data class="mb-24"/>
+    </div>
+    <div>
+      <movie-review />
+    </div>
   </div>
 </template>
 

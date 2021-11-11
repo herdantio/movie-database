@@ -1,15 +1,18 @@
 <template>
   <div>
-    <el-row>
-      <el-col>
-        <h2 class="text-white text-4xl">Reviews</h2>
+        <p class="text-white text-4xl">Reviews</p>
 
         <div class="p-3">
-          <h3 class="text-white text-lg">Name</h3>
-          <el-col :span="10" class="mb-3">
+          <p class="text-white text-lg">Name</p>
+          
+          <div class="grid grid-cols-7 mb-3">
             <el-input v-model="reviewNameInput"/>
-          </el-col>
-          <el-input class="mb-3" v-model="reviewDescInput"/>
+          </div>
+
+          <div>
+            <el-input class="mb-3" v-model="reviewDescInput"/>
+          </div>
+
           <el-button
               class="bg-purple-600 text-white"
               @click="postReview"
@@ -26,9 +29,9 @@
               :key="review.id"
           />
         </div>
-        <p class="text-white text-3xl p-3" v-else>No Reviews</p>
-      </el-col>
-    </el-row>
+        <div v-else>
+          <p class="text-white text-3xl p-3">No Reviews</p>
+        </div>
   </div>
 </template>
 

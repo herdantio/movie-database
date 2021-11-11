@@ -1,10 +1,8 @@
 <template>
-  <el-row class="text-white bg-purple-600 mb-5 p-5">
-    <el-col>
-      <p class="text-white font-bold">{{reviewName}}</p>
-      <p class="text-white">{{reviewDesc}}</p>
-    </el-col>
-  </el-row>
+  <div class="text-white bg-purple-600 mb-5 p-5 rounded-lg">
+    <p class="text-white font-bold">{{reviewName}}</p>
+    <p class="text-white">{{reviewDesc}}</p>
+  </div>
 </template>
 
 <script>
