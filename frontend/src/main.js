@@ -7,7 +7,7 @@ import store from './store'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 
-// import './styles/global.scss'
+// implement tailwind
 import './assets/tailwind.css'
 
 createApp(App).use(store).use(router).use(ElementPlus).mount('#app')

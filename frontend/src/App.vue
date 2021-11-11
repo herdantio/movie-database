@@ -1,6 +1,8 @@
 <template>
-  <menu-bar/>
-  <router-view  class="p-40"/>
+  <div>
+    <menu-bar/>
+    <router-view class="p-20"/>
+  </div>
 </template>
 
 <script>
@@ -15,8 +17,5 @@ export default {
 </script>
 
 <style lang="scss">
-body{
-  background-color: black;
-}
 
 </style>
