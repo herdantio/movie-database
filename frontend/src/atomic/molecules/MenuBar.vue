@@ -1,17 +1,7 @@
 <template>
-  <el-menu
-      mode="horizontal"
-      background-color="#5D5FEF"
-      text-color="#000"
-      active-text-color="#000"
-  >
-    <el-menu-item>
-      <h1>Movie</h1>
-    </el-menu-item>
-    <el-menu-item>
-      <el-button round>ADD MOVIE</el-button>
-    </el-menu-item>
-  </el-menu>
+  <div class="bg-purple-600 p-10">
+    <p class="text-white text-5xl ">Test</p>
+  </div>
 </template>
 
 <script>
