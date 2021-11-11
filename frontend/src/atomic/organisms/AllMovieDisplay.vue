@@ -1,6 +1,6 @@
 <template>
-    <el-row>
-      <el-col v-for="movie in movies" :span="4" :key="movie.id">
+    <div class="grid grid-cols-12">
+      <div v-for="movie in movies" class="col-span-2" :key="movie.id">
         <movie-card
             :movieTitle="movie.movieTitle"
             :moviePicture="movie.moviePicture"
@@ -8,8 +8,8 @@
             @click="goToMoviePage(movie.id)"
         >
         </movie-card>
-      </el-col>
-    </el-row>
+      </div>
+    </div>
 </template>
 
 <script>
