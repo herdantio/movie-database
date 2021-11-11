@@ -1,6 +1,6 @@
 <template>
     <el-row>
-      <el-col v-for="movie in movies" :span="4">
+      <el-col v-for="movie in movies" :span="4" :key="movie.id">
         <movie-card
             :movieTitle="movie.movieTitle"
             :moviePicture="movie.moviePicture"

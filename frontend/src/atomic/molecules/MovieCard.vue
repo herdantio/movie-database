@@ -1,20 +1,13 @@
 <template>
-  <el-row class="m-2 cursor-pointer">
-    <el-col>
-      <el-row>
-        <el-image
-            :src="`http://localhost:3000/images/${moviePicture}`"
-            class="h-300px"
-        />
-      </el-row>
-      <el-row>
-        <h2 class="text-white">{{shortenTitle}}</h2>
-      </el-row>
-      <el-row>
-        <h3 class="text-white">{{movieYear}}</h3>
-      </el-row>
-      </el-col>
-  </el-row>
+  <div class="m-2 cursor-pointer">
+      <el-image
+          :src="`http://localhost:3000/images/${moviePicture}`"
+          class="h-300px"
+      />
+      <p class="text-white">{{shortenTitle}}</p>
+
+      <p class="text-white">{{movieYear}}</p>
+  </div>
 </template>
 
 <script>
