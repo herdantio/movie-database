@@ -1,8 +1,8 @@
 <template>
-  <el-row class="c-w bg-purple m-10 p-15">
+  <el-row class="text-white bg-purple-600 mb-5 p-5">
     <el-col>
-      <h2>{{reviewName}}</h2>
-      <h3>{{reviewDesc}}</h3>
+      <p class="text-white font-bold">{{reviewName}}</p>
+      <p class="text-white">{{reviewDesc}}</p>
     </el-col>
   </el-row>
 </template>

@@ -2,30 +2,31 @@
   <div>
     <el-row>
       <el-col>
-        <h2 class="c-w">Reviews</h2>
+        <h2 class="text-white text-4xl">Reviews</h2>
 
-        <div>
-          <h3 class="c-w m-10">Name</h3>
-          <el-col :span="10" class="m-10">
+        <div class="p-3">
+          <h3 class="text-white text-lg">Name</h3>
+          <el-col :span="10" class="mb-3">
             <el-input v-model="reviewNameInput"/>
           </el-col>
-            <el-input v-model="reviewDescInput" class="m-10"/>
+          <el-input class="mb-3" v-model="reviewDescInput"/>
           <el-button
-              class="bg-purple c-w m-10"
+              class="bg-purple-600 text-white"
               @click="postReview"
           >
             Post Review
           </el-button>
         </div>
 
-
-        <review-card
-            v-if="isReviews != 0"
-            v-for="review in Reviews"
-            :reviewName="review.reviewName"
-            :reviewDesc="review.reviewDesc"
-        />
-        <h2 class="c-w" v-else>No Reviews</h2>
+        <div v-if="isReviews != 0" class="p-3">
+          <review-card
+              v-for="review in Reviews"
+              :reviewName="review.reviewName"
+              :reviewDesc="review.reviewDesc"
+              :key="review.id"
+          />
+        </div>
+        <p class="text-white text-3xl p-3" v-else>No Reviews</p>
       </el-col>
     </el-row>
   </div>

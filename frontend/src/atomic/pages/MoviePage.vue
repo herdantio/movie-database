@@ -1,7 +1,7 @@
 <template>
   <div>
-    <movie-data/>
-    <movie-review/>
+    <movie-data class="mb-24"/>
+    <movie-review />
   </div>
 </template>
 
