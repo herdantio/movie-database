@@ -1,5 +1,4 @@
-if [[ $1 == "backend" ]]
-then
+if [[ $1 == "backend" ]]; then
   printf 'Running Only Backend Docker Service \n'
   echo "build and run container"
   docker-compose up -d --build server postgres
