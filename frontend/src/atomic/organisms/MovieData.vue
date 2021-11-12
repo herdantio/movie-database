@@ -1,18 +1,24 @@
 <template>
   <div class="grid grid-cols-12">
+
+    <!-- movie poster image -->
     <div class="col-span-4">
-      <div>
+      <div v-if="movie.moviePicture != ''">
         <el-image
           :src="`http://localhost:3000/images/${movie.moviePicture}`"
         />
       </div>
+      <div v-else>
+        <el-empty description="No Image" />
+      </div>
       <div>
-        <el-button type=text>
+        <el-button type=text @click="this.changeStateDialogEditMoviePicture">
           <pencil-alt-icon class="text-white w-10"/>
         </el-button>
       </div>
     </div>
     
+    <!-- movie data info -->
     <div class="col-span-8">
       <div>
         <p class="text-white text-4xl font-bold">{{movie.movieTitle}}</p>
@@ -26,23 +32,33 @@
         </el-button>
       </div>
     </div>
+
+    <!-- dialog edit movie picture -->
+    <dialog-edit-movie-picture :isVisible="dialogEditMoviePictureVisible" />
   </div>
 </template>
 
 <script>
 import { defineAsyncComponent } from '@vue/runtime-core';
-import {mapState} from "vuex";
+import {mapState, mapMutations} from "vuex";
 
 export default {
   name: "MovieData",
   components: {
-    PencilAltIcon: defineAsyncComponent(() => import('@heroicons/vue/outline/PencilAltIcon'))
+    PencilAltIcon: defineAsyncComponent(() => import('@heroicons/vue/outline/PencilAltIcon')),
+    DialogEditMoviePicture: defineAsyncComponent(() => import('@/atomic/organisms/DialogEditMoviePicture.vue')),
   },
   computed: {
     ...mapState('movie', {
-      movie: state => state.movie
+      movie: state => state.movie,
+      dialogEditMoviePictureVisible: state => state.dialogEditMoviePictureVisible,
     })
-  }
+  },
+  methods: {
+    ...mapMutations('movie', [
+      'changeStateDialogEditMoviePicture'
+    ]),
+  },
 }
 </script>
 

@@ -6,8 +6,10 @@ export default {
     state: {
         movies: [],
         movie: {
+            moviePicture: '',
             Reviews: []
-        }
+        },
+        dialogEditMoviePictureVisible: false,
     },
     mutations: {
         getAllMovie(state, movies) {
@@ -15,6 +17,9 @@ export default {
         },
         getOneMovie(state, movie){
             state.movie = {...movie}
+        },
+        changeStateDialogEditMoviePicture(state){
+            state.dialogEditMoviePictureVisible = !state.dialogEditMoviePictureVisible
         }
     },
     actions: {

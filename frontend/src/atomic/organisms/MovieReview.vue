@@ -2,6 +2,7 @@
   <div>
         <p class="text-white text-4xl">Reviews</p>
 
+        <!-- review input form -->
         <div class="p-3">
           <p class="text-white text-lg">Name</p>
           
@@ -21,6 +22,7 @@
           </el-button>
         </div>
 
+        <!-- list of reviews -->
         <div v-if="isReviews != 0" class="p-3">
           <review-card
               v-for="review in Reviews"
