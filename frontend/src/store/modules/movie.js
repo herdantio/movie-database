@@ -18,8 +18,11 @@ export default {
         getOneMovie(state, movie){
             state.movie = {...movie}
         },
-        changeStateDialogEditMoviePicture(state){
-            state.dialogEditMoviePictureVisible = !state.dialogEditMoviePictureVisible
+        changeStateDialogEditMoviePictureVisible(state){
+            state.dialogEditMoviePictureVisible = true
+        },
+        changeStateDialogEditMoviePictureNotVisible(state){
+            state.dialogEditMoviePictureVisible = false
         }
     },
     actions: {
@@ -39,6 +42,15 @@ export default {
             try {
                 let res = await reviewAPI.postOneReview(data)
                 dispatch('getOneMovie', data.movieId)
+            }catch (e) {
+                console.log(e)
+            }
+        },
+        async updateMoviePicture({commit, dispatch}, data){
+            try {
+                let res = await movieAPI.updateMoviePicture(data)
+                dispatch('getOneMovie', data.movieId)
+                commit('changeStateDialogEditMoviePictureNotVisible')
             }catch (e) {
                 console.log(e)
             }

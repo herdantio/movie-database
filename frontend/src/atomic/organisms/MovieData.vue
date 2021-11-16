@@ -12,7 +12,7 @@
         <el-empty description="No Image" />
       </div>
       <div>
-        <el-button type=text @click="this.changeStateDialogEditMoviePicture">
+        <el-button type=text @click="this.changeStateDialogEditMoviePictureVisible">
           <pencil-alt-icon class="text-white w-10"/>
         </el-button>
       </div>
@@ -56,7 +56,7 @@ export default {
   },
   methods: {
     ...mapMutations('movie', [
-      'changeStateDialogEditMoviePicture'
+      'changeStateDialogEditMoviePictureVisible'
     ]),
   },
 }
