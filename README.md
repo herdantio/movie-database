@@ -1,4 +1,4 @@
-# A Fullstack Technical Test For PT SERYU CARGO
+# A Movie Database using Vue, Express, and PostgreSQL
 
 At first i didn't have intention to use docker, but to simplify running it, i use docker-compose, consisted of three services:
 * Vue Frontend
