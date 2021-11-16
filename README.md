@@ -5,6 +5,12 @@ At first i didn't have intention to use docker, but to simplify running it, i us
 * Express.js Backend
 * PostgreSQL Database
 
+##TODOS
+* Create UI for movie delete
+* Create UI for movie update
+* Create UI for Movie creation
+
+
 ### Run all service
 ```
 ./setup.sh
